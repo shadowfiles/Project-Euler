@@ -1,14 +1,15 @@
 (defparameter *max* 4000000)
-(defparameter *num* 2)
-(defparameter *i* 1)
+(defparameter *n1* 1)
+(defparameter *n2* 1)
+(defparameter *num* 1)
 (defparameter *total* 0)
-(defparameter *list* (list 1 1))
 
-(loop
-  (while (<= *num* *max*))
-  (setq *num* (+ (nth *i* *list*) (nth (- *i* 1) *list*)))
-  (setq *i* (+ *i* 1))
-
+(loop while (<= *num* *max*) 
+  do (setq *num* (+ *n1* *n2*)) 
+	do (setq *n1* *n2*) 
+  do (setq *n2* *num*) 
+  do (if (= 0 (mod *num* 2)) 
+	  	(setq *total* (+ *total* *num*)))
 )
 
 (print *total*)

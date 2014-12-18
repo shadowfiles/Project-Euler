@@ -1,0 +1,17 @@
+(defun next (n)
+	(if (< n 3) 
+		(setq n 3) 
+		(setq n (+ n 2)))
+	n)
+
+(defun largest-prime (n)
+	(setq p 2)
+	(setq q 1)
+	(loop while (> n 1)
+		do (loop while (= (mod n p) 0) 
+			do (setq n (/ n p)))
+		do (setq q p)
+		do (setq p (next p))
+	) 
+	q)
+
