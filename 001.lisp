@@ -8,7 +8,5 @@
 		(* mulB (floor (* b (+ b 1)) 2)))
 		(* (* mulA mulB) (floor (* c (+ c 1)) 2)))))
 
-(loop while (listen) 
-   do(let 
-      (result (fizzbuzz 3 5 (read))) 
-      (if (> result 0) (print result))))
+(loop for i from 1 to (read)
+   do(format t "~D~%" (fizzbuzz 3 5 (read))))
